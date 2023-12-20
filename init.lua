@@ -49,7 +49,10 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      {
+        'j-hui/fidget.nvim',
+        opts = {},
+      },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -159,7 +162,7 @@ require('lazy').setup({
     config = function()
       require("catppuccin").setup({
         flavour = "mocha",
-        -- transparent_background = true,
+        transparent_background = true,
       })
       vim.cmd.colorscheme 'catppuccin'
     end,
@@ -172,9 +175,9 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'catppuccin',
+        theme = 'auto',
         component_separators = '|',
-        section_separators = '',
+        section_separators = { left = '', right = '' },
       },
     },
   },
@@ -233,7 +236,7 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  { import = 'custom.plugins' },
+  { import = 'custom.plugins.plugins' },
 }, {})
 
 -- [[ Setting options ]]
@@ -460,6 +463,15 @@ vim.defer_fn(function()
       },
     },
   }
+  local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+  parser_config.hypr = {
+    install_info = {
+      url = "https://github.com/luckasRanarison/tree-sitter-hypr",
+      files = { "src/parser.c" },
+      branch = "master",
+    },
+    filetype = "hypr",
+  }
 end, 0)
 
 -- [[ Configure LSP ]]
@@ -539,7 +551,12 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-  -- clangd = {},
+  clangd = {
+    cmd = {
+      "clangd",
+      "--offset-encoding=utf-16",
+    },
+  },
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
@@ -547,14 +564,13 @@ local servers = {
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
   ltex = {
-    settings = {
-      ltex = {
-        language = "en-US",
-        languageToolHttpServerUri = "https://api.languagetoolplus.com",
-        languageToolOrg = {
-          username = "brycearthurwalker@gmail.com",
-          apiKey = "pit-CkBrXozbo2c5"
-        }
+    ltex = {
+      language = "en-US",
+      checkFrequency = "edit",
+      languageToolHttpServerUri = "https://api.languagetoolplus.com",
+      languageToolOrg = {
+        username = "brycearthurwalker@gmail.com",
+        apiKey = "pit-CkBrXozbo2c5"
       }
     }
   },
@@ -585,12 +601,18 @@ mason_lspconfig.setup {
 
 mason_lspconfig.setup_handlers {
   function(server_name)
-    require('lspconfig')[server_name].setup {
+    local config = {
       capabilities = capabilities,
       on_attach = on_attach,
       settings = servers[server_name],
       filetypes = (servers[server_name] or {}).filetypes,
     }
+    if server_name == 'clangd' then
+      config.cmd = {
+        "clangd",
+        "--offset-encoding=utf-16", }
+    end
+    require('lspconfig')[server_name].setup(config)
   end,
 }
 
@@ -602,23 +624,21 @@ require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
 cmp.setup {
+  preselect = cmp.PreselectMode.None, -- NOTE: Added this to stop selecting first opt
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
     end,
   },
-  completion = {
-    completeopt = 'menu,menuone,noinsert',
-  },
   mapping = cmp.mapping.preset.insert {
     ['<C-n>'] = cmp.mapping.select_next_item(),
     ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-k>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-j>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete {},
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
+      select = false, -- NOTE: Changed from true to stop selecting first option
     },
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -643,6 +663,7 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
     { name = 'path' },
+    { name = "copilot" },
   },
 }
 
