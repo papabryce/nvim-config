@@ -558,8 +558,25 @@ local servers = {
     },
   },
   -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
+  pyright = {},
+  rust_analyzer = {
+    ["rust-analyzer"] = {
+      procMacro = {
+        ignored = {
+          leptos_macro = {
+            -- optional: --
+            -- "component",
+            "server",
+          },
+        },
+      },
+      cargo = {
+        buildScripts = {
+          enable = true,
+        },
+      },
+    }
+  },
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 

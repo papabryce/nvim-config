@@ -88,7 +88,8 @@ return {
     vim.keymap.set('n', '<F7>', dapui.toggle, { desc = 'Debug: See last session result.' })
 
     dap.listeners.after.event_initialized['dapui_config'] = function()
-      require('neo-tree.command').execute({ action = 'close' })
+      -- Close Nvim-Tree using api
+      vim.cmd('NvimTreeClose')
       dapui.open()
     end
     dap.listeners.before.event_terminated['dapui_config'] = function()
@@ -100,5 +101,8 @@ return {
 
     -- Install golang specific config
     require('dap-go').setup()
+
+    -- Load Launch JS
+    require('dap.ext.vscode').load_launchjs(nil, { cppdbg = { 'c', 'cpp' } })
   end,
 }
