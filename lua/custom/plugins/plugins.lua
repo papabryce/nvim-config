@@ -3,9 +3,13 @@
 --
 -- See the kickstart.nvim README for more information
 return {
+	require('custom.plugins.obsidian'),
+	require('custom.plugins.notify'),
 	require('custom.plugins.file_tree'),
+	require('custom.plugins.noice'),
 	require('custom.plugins.start_screen'),
 	require('custom.plugins.tab_line'),
+	{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 	{
 		'folke/todo-comments.nvim',
 		dependencies = { "nvim-lua/plenary.nvim" },
@@ -46,6 +50,6 @@ return {
 		end
 	},
 	{
-		"luckasRanarison/tree-sitter-hypr"
+		"luckasRanarison/tree-sitter-hyprlang"
 	},
 }

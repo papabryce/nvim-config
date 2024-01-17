@@ -4,6 +4,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.wo.relativenumber = true
+vim.opt.conceallevel = 1
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    https://github.com/folke/lazy.nvim
@@ -466,7 +467,7 @@ vim.defer_fn(function()
   local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
   parser_config.hypr = {
     install_info = {
-      url = "https://github.com/luckasRanarison/tree-sitter-hypr",
+      url = "https://github.com/luckasRanarison/tree-sitter-hyprlang",
       files = { "src/parser.c" },
       branch = "master",
     },
@@ -641,6 +642,13 @@ require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
 cmp.setup {
+  window = {
+    -- NOTE: You can set this to try to avoid showing extra documentation
+    --  See `:help cmp-config` for more information
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+
+  },
   preselect = cmp.PreselectMode.None, -- NOTE: Added this to stop selecting first opt
   snippet = {
     expand = function(args)
