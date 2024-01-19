@@ -5,9 +5,9 @@
 return {
 	require('custom.plugins.obsidian'),
 	require('custom.plugins.notify'),
-	require('custom.plugins.file_tree'),
-	require('custom.plugins.noice'),
 	require('custom.plugins.start_screen'),
+	require('custom.plugins.noice'), -- causing fidget to still exist
+	require('custom.plugins.file_tree'),
 	require('custom.plugins.tab_line'),
 	{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 	{
