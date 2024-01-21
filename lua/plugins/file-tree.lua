@@ -86,6 +86,6 @@ return {
 			--   indent_width = 1,
 			-- },
 		})
-		require('keymaps').filetree()
+		require('keymaps').map_filetree()
 	end,
 }

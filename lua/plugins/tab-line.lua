@@ -5,6 +5,6 @@ return {
 	config = function()
 		local b = require("bufferline")
 		b.setup()
-		require('keymaps').tabline()
+		require('keymaps').map_tabline()
 	end
 }

@@ -1,7 +1,6 @@
 local keymaps = {
 
-  basic = function()
-    -- [[ Basic Keymaps ]]
+  map_basic = function()
     -- Keymaps for better default experience
     -- See `:help vim.keymap.set()`
     vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
@@ -25,8 +24,7 @@ local keymaps = {
     vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Window up' })
   end,
 
-  telescope = function()
-    -- [[ Telescope Keymaps ]]
+  map_telescope = function()
     -- See `:help telescope.builtin`
     vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
     vim.keymap.set('n', '<leader>sk', require('telescope.builtin').keymaps, { desc = '[S]earch [K]eymaps' })
@@ -57,9 +55,7 @@ local keymaps = {
     vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
   end,
 
-  debug = function()
-    -- [[ Debug Keymaps ]]
-    -- Basic debugging keymaps, feel free to change to your liking!
+  map_debug = function()
     vim.keymap.set('n', '<F5>', require('dap').continue, { desc = 'Debug: Start/Continue' })
     vim.keymap.set('n', '<F6>', require('dap').pause, { desc = 'Debug: Pause' })
     vim.keymap.set('n', '<F10>', function()
@@ -80,19 +76,16 @@ local keymaps = {
     vim.keymap.set('n', '<F7>', require('dapui').toggle, { desc = 'Debug: See last session result.' })
   end,
 
-  neogen = function()
-    -- [[ Neogen Keymaps ]]
+  map_neogen = function()
     vim.keymap.set('n', '<leader>dc', require('neogen').generate,
       { desc = '[D]ocument [C]ode' })
   end,
 
-  filetree = function()
-    -- [[ Filetree Keymaps ]]
+  map_filetree = function()
     vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle Filetree' })
   end,
 
-  tabline = function()
-    -- [[ Tabline Keymaps ]]
+  map_tabline = function()
     vim.keymap.set('n', '<Tab>', function() require('bufferline').cycle(1) end,
       { desc = 'Move to next buffer on bufferline' })
     vim.keymap.set('n', '<S-Tab>', function() require('bufferline').cycle(-1) end,

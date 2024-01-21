@@ -85,6 +85,6 @@ return {
     -- Load Launch JS
     require('dap.ext.vscode').load_launchjs(nil, { cppdbg = { 'c', 'cpp' } })
 
-    require('keymaps').debug()
+    require('keymaps').map_debug()
   end,
 }

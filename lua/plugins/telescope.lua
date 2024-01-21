@@ -94,6 +94,6 @@ return {
 
     vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
 
-    require('keymaps').telescope()
+    require('keymaps').map_telescope()
   end,
 }
