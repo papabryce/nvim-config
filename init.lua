@@ -9,7 +9,7 @@ vim.opt.conceallevel = 1
 require('lazy-bootstrap')
 
 require('lazy').setup({
-  { import = 'plugins' },
+  { import = 'plugins/manifest' },
 }, {})
 
 require('options')
