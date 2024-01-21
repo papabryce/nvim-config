@@ -44,23 +44,6 @@ return {
 
     -- require('dap.ext.vscode').load_launchjs(nil, { cppdbg = { 'c', 'cpp' } })
 
-    -- Basic debugging keymaps, feel free to change to your liking!
-    vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Debug: Start/Continue' })
-    vim.keymap.set('n', '<F6>', dap.pause, { desc = 'Debug: Pause' })
-    vim.keymap.set('n', '<F10>', function()
-      dapui.close()
-      dap.terminate()
-    end
-    , { desc = 'Debug: Terminate' })
-    vim.keymap.set('n', '<F9>', dap.run_last, { desc = 'Debug: Run Last' })
-    vim.keymap.set('n', '<F1>', dap.step_into, { desc = 'Debug: Step Into' })
-    vim.keymap.set('n', '<F2>', dap.step_over, { desc = 'Debug: Step Over' })
-    vim.keymap.set('n', '<F3>', dap.step_out, { desc = 'Debug: Step Out' })
-    vim.keymap.set('n', '<F4>', dap.step_back, { desc = 'Debug: Step Back' })
-    vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint, { desc = 'Debug: Toggle Breakpoint' })
-    vim.keymap.set('n', '<leader>B', function()
-      dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
-    end, { desc = 'Debug: Set Breakpoint' })
 
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|
@@ -84,9 +67,6 @@ return {
       },
     }
 
-    -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
-    vim.keymap.set('n', '<F7>', dapui.toggle, { desc = 'Debug: See last session result.' })
-
     dap.listeners.after.event_initialized['dapui_config'] = function()
       -- Close Nvim-Tree using api
       vim.cmd('NvimTreeClose')
@@ -104,5 +84,7 @@ return {
 
     -- Load Launch JS
     require('dap.ext.vscode').load_launchjs(nil, { cppdbg = { 'c', 'cpp' } })
+
+    require('keymaps').debug()
   end,
 }

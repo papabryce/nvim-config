@@ -86,6 +86,6 @@ return {
 			--   indent_width = 1,
 			-- },
 		})
-		vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle Filetree' })
+		require('keymaps').filetree()
 	end,
 }
