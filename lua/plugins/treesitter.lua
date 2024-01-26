@@ -3,6 +3,8 @@ return {
   'nvim-treesitter/nvim-treesitter',
   dependencies = {
     'nvim-treesitter/nvim-treesitter-textobjects',
+    "luckasRanarison/tree-sitter-hyprlang",
+    'HiPhish/rainbow-delimiters.nvim',
   },
   build = ':TSUpdate',
 

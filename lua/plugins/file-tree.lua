@@ -19,7 +19,11 @@
 return {
 	"nvim-tree/nvim-tree.lua",
 	version = "*",
-	lazy = false,
+	lazy = true,
+	keys = {
+		-- vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle Filetree' })
+		{ "<C-N>", "<cmd>NvimTreeToggle<CR>", desc = "Toggle Filetree" },
+	},
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
@@ -86,6 +90,5 @@ return {
 			--   indent_width = 1,
 			-- },
 		})
-		require('keymaps').map_filetree()
 	end,
 }

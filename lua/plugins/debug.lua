@@ -9,6 +9,7 @@
 return {
   -- NOTE: Yes, you can install new plugins here!
   'mfussenegger/nvim-dap',
+  lazy = true,
   -- NOTE: And you can specify dependencies as well
   dependencies = {
     -- Creates a beautiful debugger UI
@@ -19,7 +20,7 @@ return {
     'jay-babu/mason-nvim-dap.nvim',
 
     -- Add your own debuggers here
-    'leoluz/nvim-dap-go',
+    -- 'leoluz/nvim-dap-go',
   },
 
   config = function(_, _)
@@ -80,7 +81,7 @@ return {
     end
 
     -- Install golang specific config
-    require('dap-go').setup()
+    -- require('dap-go').setup()
 
     -- Load Launch JS
     require('dap.ext.vscode').load_launchjs(nil, { cppdbg = { 'c', 'cpp' } })

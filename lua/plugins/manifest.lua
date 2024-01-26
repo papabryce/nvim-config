@@ -27,7 +27,7 @@ return {
 	require('plugins.comments'),
 	require('plugins.beacon'),
 	require('plugins.neogen'),
+	require('plugins.brackets'),
 	-- require('plugins.copilot'),
-	require('plugins.hyprlang'),
 	require('plugins.cmake-tools'),
 }

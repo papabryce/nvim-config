@@ -81,10 +81,6 @@ local keymaps = {
       { desc = '[D]ocument [C]ode' })
   end,
 
-  map_filetree = function()
-    vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle Filetree' })
-  end,
-
   map_tabline = function()
     vim.keymap.set('n', '<Tab>', function() require('bufferline').cycle(1) end,
       { desc = 'Move to next buffer on bufferline' })

@@ -10,7 +10,11 @@ require('lazy-bootstrap')
 
 require('lazy').setup({
   { import = 'plugins/manifest' },
-}, {})
+}, {
+  defaults = {
+    --  lazy = true
+  }
+})
 
 require('options')
 
