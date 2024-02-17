@@ -17,10 +17,10 @@ return {
 	require('plugins.indent-blankline'),
 	require('plugins.comment'),
 	-- Additional Plugins
-	require('plugins.obsidian'),
+	-- require('plugins.obsidian'),
 	require('plugins.notify'),
 	require('plugins.start-screen'),
-	require('plugins.noice'), -- causing fidget to still exist
+	-- require('plugins.noice'), -- causing fidget to still exist
 	require('plugins.file-tree'),
 	require('plugins.tab-line'),
 	require('plugins.glow'),
@@ -30,4 +30,5 @@ return {
 	require('plugins.brackets'),
 	-- require('plugins.copilot'),
 	require('plugins.cmake-tools'),
+	require('plugins.suda'),
 }

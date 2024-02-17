@@ -22,6 +22,10 @@ local keymaps = {
     vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Window right' })
     vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Window down' })
     vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Window up' })
+
+    -- Terminal
+    vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal' })
+    vim.keymap.set('n', '<C-w>t', '<cmd>terminal <CR>', { desc = 'Open terminal' })
   end,
 
   map_telescope = function()
