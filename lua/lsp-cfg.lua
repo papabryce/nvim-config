@@ -76,9 +76,13 @@ require('mason-lspconfig').setup()
 --  define the property 'filetypes' to the map in question.
 local servers = {
   clangd = {
-    cmd = {
+    cmd = { -- This doesn't seem to do anything. Look into this later
       "clangd",
       "--offset-encoding=utf-16",
+      "--clang-tidy",
+      "--completion-style=bundled",
+      "--cross-file-rename",
+      "--header-insertion=iwyu",
     },
   },
   -- gopls = {},
@@ -151,7 +155,18 @@ mason_lspconfig.setup_handlers {
     if server_name == 'clangd' then
       config.cmd = {
         "clangd",
-        "--offset-encoding=utf-16", }
+        "--offset-encoding=utf-16",
+        "--clang-tidy",
+        "--completion-style=bundled",
+        "--cross-file-rename",
+        "--header-insertion=iwyu",
+      }
+      config.init_options = {
+        clangdFileStatus = true, -- Provides information about activity on clangd’s per-file worker thread
+        usePlaceholders = true,
+        completeUnimported = true,
+        semanticHighlighting = true,
+      }
     end
     require('lspconfig')[server_name].setup(config)
   end,

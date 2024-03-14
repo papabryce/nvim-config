@@ -1,5 +1,14 @@
 # papabryce's nvim (based on kickstart.nvim)
 
+## alex guide (for idiots)
+1. clone with `git clone git@github.com:papabryce/nvim-config.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim`
+2. install fzf and ripgrep with `sudo pacman -S fzf && sudo pacman -S ripgrep`
+3. start up nvim with `nvim`
+4. type `:Lazy`, then type a capital `S`, this will install all plugins. When it is done, exit with `q`
+5. type `:Mason`, then type a capital `S`, this will install all LSPs. When it is done, exit with `q`
+6. uninstall vscode with `sudo pacman -R code` (or whatever godforsaken binary you have installed)
+7. profit
+
 ## install
 
 Neovim's configurations are located under the following paths, depending on your OS:
@@ -29,6 +38,7 @@ git clone git@github.com:papabryce/nvim-config.git $env:USERPROFILE\AppData\Loca
 ```
 
 - you also need `fzf` and `ripgrep`
+
 
 ### windows install
 
