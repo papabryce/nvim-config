@@ -1,6 +1,10 @@
 # papabryce's nvim (based on kickstart.nvim)
 
 ## alex guide (for idiots)
+notes:
+- Leader is `<Space>`
+- To figure out what key(s) an action is bound to, do `<Space>sk`. This will [S]earch [K]eymaps
+setup:
 1. clone with `git clone git@github.com:papabryce/nvim-config.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim`
 2. install fzf and ripgrep with `sudo pacman -S fzf && sudo pacman -S ripgrep`
 3. start up nvim with `nvim`
@@ -8,6 +12,7 @@
 5. type `:Mason`, then type a capital `S`, this will install all LSPs. When it is done, exit with `q`
 6. uninstall vscode with `sudo pacman -R code` (or whatever godforsaken binary you have installed)
 7. profit
+
 
 ## install
 
