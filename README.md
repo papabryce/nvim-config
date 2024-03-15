@@ -4,9 +4,9 @@
 - Leader is `<Space>`
 - To figure out what key(s) an action is bound to, do `<Space>sk`. This will [S]earch [K]eymaps
 1. clone with `git clone git@github.com:papabryce/nvim-config.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim`
-2. install fzf and ripgrep with `sudo pacman -S fzf && sudo pacman -S ripgrep`
-3. start up nvim with `nvim`
-4. type `:Lazy`, then type a capital `S`, this will install all plugins. When it is done, exit with `q`
+2. install fzf, ripgrep, nodejs, and npm with `sudo pacman -S fzf && sudo pacman -S ripgrep && sudo pacman -S nodejs && sudo pacman -S npm`
+3. start up nvim with `nvim`, then let Lazy initialize, exit with `q`, then exit nvim
+4. Start nvim and type `:Lazy`, then type a capital `S`, this will install all plugins. When it is done, exit with `q`
 5. type `:Mason`, then type a capital `S`, this will install all LSPs. When it is done, exit with `q`
 6. uninstall vscode with `sudo pacman -R code` (or whatever godforsaken binary you have installed)
 7. profit
