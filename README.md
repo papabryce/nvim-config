@@ -7,7 +7,7 @@
 2. install fzf, ripgrep, nodejs, and npm with `sudo pacman -S fzf && sudo pacman -S ripgrep && sudo pacman -S nodejs && sudo pacman -S npm`
 3. start up nvim with `nvim`, then let Lazy initialize, exit with `q`, then exit nvim
 4. Start nvim and type `:Lazy`, then type a capital `S`, this will install all plugins. When it is done, exit with `q`
-5. type `:Mason`, then type a capital `S`, this will install all LSPs. When it is done, exit with `q`
+5. type `:Mason`, then type a capital `U`, this will install all LSPs. When it is done, exit with `q`
 6. uninstall vscode with `sudo pacman -R code` (or whatever godforsaken binary you have installed)
 7. profit
 
