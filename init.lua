@@ -6,21 +6,23 @@ vim.g.maplocalleader = ' '
 vim.wo.relativenumber = true
 vim.opt.conceallevel = 1
 
-require('lazy-bootstrap')
+if vim.g.vscode then
+  -- VSCode extension
+else
+  -- ordinary Neovim
+  require('lazy-bootstrap')
 
-require('lazy').setup({
-  { import = 'plugin-manifest' },
-}, {
-  defaults = {
-    --  lazy = true
-  }
-})
-
-require('options')
-
-require('lsp-cfg')
-
-require('keymaps').map_basic()
+  require('lazy').setup({
+    { import = 'plugin-manifest' },
+  }, {
+    defaults = {
+      --  lazy = true
+    }
+  })
+  require('options')
+  require('lsp-cfg')
+  require('keymaps').map_basic()
+end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

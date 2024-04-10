@@ -1,6 +1,8 @@
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
+--
+vim.o.laststatus = 3 -- For horizontal split border
 
 vim.o.tabstop = 2
 
@@ -63,6 +65,7 @@ vim.opt.scrolloff = 10
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })

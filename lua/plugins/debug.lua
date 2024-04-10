@@ -72,7 +72,8 @@ return {
 
     dap.listeners.after.event_initialized['dapui_config'] = function()
       -- Close Nvim-Tree using api
-      vim.cmd('NvimTreeClose')
+      -- vim.cmd('NvimTreeClose')
+      vim.cmd('Neotree close')
       dapui.open()
     end
     dap.listeners.before.event_terminated['dapui_config'] = function()

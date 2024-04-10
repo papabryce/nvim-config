@@ -19,6 +19,13 @@ local keymaps = {
     vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
     vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
+    -- Buffers and Tabs
+    vim.keymap.set('n', '<leader>x', '<cmd>bdelete<CR>', { desc = 'Close current buffer' })
+    vim.keymap.set('n', '<leader><tab>', '<cmd>tabnew<CR>', { desc = 'Move to next tab' })
+    vim.keymap.set('n', '<tab>', '<cmd>tabn<CR>', { desc = 'Move to next tab' })
+    vim.keymap.set('n', '<S-tab>', '<cmd>tabp<CR>', { desc = 'Move to previous tab' })
+    vim.keymap.set('n', '<leader>X', '<cmd>bdelete!<CR>', { desc = 'Force close current buffer' })
+
     -- Move between windows
     vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Window left' })
     vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Window right' })
@@ -110,6 +117,12 @@ local keymaps = {
   map_naba = function()
     vim.keymap.set('n', '<leader>k', require('nabla').popup,
       { desc = 'Hover Latex' })
+  end,
+
+  map_file_tree = function()
+    vim.keymap.set('n', '<C-n>', '<Cmd>Neotree toggle<CR>')
+    -- vim.keymap.set('n', '<C-n>', '<cmd>Neotree toggle<CR>',
+    --   { desc = 'Toggle filetree' })
   end,
 
   map_better_term = function()
