@@ -65,6 +65,10 @@ require('which-key').register({
 -- before setting up the servers.
 require('mason').setup()
 require('mason-lspconfig').setup()
+-- require('lint').linters_by_ft = {
+--   latex = { 'latexindent', }
+-- }
+-- require('mason-nvim-lint').setup()
 
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -107,16 +111,46 @@ local servers = {
   },
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+  texlab = {
+    texlab = {
+      chktex = {
+        onOpenAndSave = true,
+      },
+      build = {
+        onSave = true,
+        executable = "tectonic",
+        args = {
+          "-X",
+          "build",
+          "--keep-logs",
+          "--keep-intermediates"
+        }
+      },
+      forwardSearch = {
+        executable = "sioyek",
+        args = {
+          "--reuse-window",
+          "--execute-command",
+          "toggle_synctex",
+          "--inverse-search",
+          "code -r -g \"%%1:%%2\"",
+          "--forward-search-file",
+          "%f",
+          "--forward-search-line",
+          "%l",
+          "%p",
+        }
+      },
+      latexFormatter = "latexindent"
+    }
+  },
 
   ltex = {
     ltex = {
       language = "en-US",
-      checkFrequency = "edit",
+      checkFrequency = "save",
       languageToolHttpServerUri = "https://api.languagetoolplus.com/",
-      languageToolOrg = {
-        username = "brycearthurwalker@gmail.com",
-        apiKey = "pit-CkBrXozbo2c5"
-      }
+      require("creds").languageToolOrg,
     }
   },
 

@@ -8,6 +8,8 @@ return {
       -- Automatically install LSPs to stdpath for neovim
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
+      -- 'mfussenegger/nvim-lint',
+      -- 'rshkarin/mason-nvim-lint',
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
     },

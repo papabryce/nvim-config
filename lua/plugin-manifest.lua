@@ -20,16 +20,16 @@ return {
 	require('plugins/obsidian'),
 	require('plugins/notify'),
 	require('plugins/start-screen'),
-	-- require('plugins/noice'), -- causing fidget to still exist
+	require('plugins/noice'), -- causing fidget to still exist
 	require('plugins/file-tree'),
 	-- require('plugins/tab-line'),
 	require('plugins/glow'),
 	require('plugins/comments'),
 	require('plugins/beacon'),
 	require('plugins/neogen'),
-	require('plugins/brackets'),
-	-- require('plugins/copilot'),
+	-- require('plugins/brackets'), -- Causing delay while typing in latex
+	-- -- require('plugins/copilot'),
 	require('plugins/cmake-tools'),
 	require('plugins/suda'),
-	require('plugins.nabla'),
+	require('plugins.nabla')
 }
