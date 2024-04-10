@@ -27,9 +27,10 @@ return {
 	require('plugins/comments'),
 	require('plugins/beacon'),
 	require('plugins/neogen'),
-	-- require('plugins/brackets'), -- Causing delay while typing in latex
+	require('plugins/brackets'), -- Causing delay while typing in latex
 	-- -- require('plugins/copilot'),
 	require('plugins/cmake-tools'),
 	require('plugins/suda'),
-	require('plugins.nabla')
+	require('plugins.nabla'),
+	require('plugins.terminal')
 }
