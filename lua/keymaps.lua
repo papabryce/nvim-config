@@ -20,11 +20,11 @@ local keymaps = {
     vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
     -- Buffers and Tabs
-    vim.keymap.set('n', '<leader>x', '<cmd>bdelete<CR>', { desc = 'Close current buffer' })
+    vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = 'Close current buffer' })
+    vim.keymap.set('n', '<leader>bD', '<cmd>bdelete!<CR>', { desc = 'Force close current buffer' })
     vim.keymap.set('n', '<leader><tab>', '<cmd>tabnew<CR>', { desc = 'Move to next tab' })
     vim.keymap.set('n', '<tab>', '<cmd>tabn<CR>', { desc = 'Move to next tab' })
     vim.keymap.set('n', '<S-tab>', '<cmd>tabp<CR>', { desc = 'Move to previous tab' })
-    vim.keymap.set('n', '<leader>X', '<cmd>bdelete!<CR>', { desc = 'Force close current buffer' })
 
     -- Move between windows
     vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Window left' })

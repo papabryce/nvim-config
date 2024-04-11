@@ -114,7 +114,7 @@ local servers = {
   texlab = {
     texlab = {
       chktex = {
-        onOpenAndSave = true,
+        -- onOpenAndSave = true,
       },
       build = {
         onSave = true,
@@ -149,8 +149,8 @@ local servers = {
     ltex = {
       language = "en-US",
       checkFrequency = "save",
-      languageToolHttpServerUri = "https://api.languagetoolplus.com/",
-      require("creds").languageToolOrg,
+      -- languageToolHttpServerUri = "https://api.languagetoolplus.com/",
+      -- require("creds").languageToolOrg
     }
   },
 
