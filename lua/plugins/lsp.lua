@@ -4,6 +4,7 @@ return {
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
+    lazy = true,
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
       'williamboman/mason.nvim',
@@ -13,11 +14,15 @@ return {
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
     },
+    opts = {
+      inlay_hints = { enabled = true }
+    }
   },
 
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
+    lazy = true,
     dependencies = {
       -- Snippet Engine & its associated nvim-cmp source
       'L3MON4D3/LuaSnip',

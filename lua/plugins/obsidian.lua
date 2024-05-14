@@ -2,6 +2,23 @@ return {
 	"epwalsh/obsidian.nvim",
 	version = "*", -- recommended, use latest release instead of latest commit
 	lazy = true,
+	keys = {
+		{
+			"<leader>so",
+			"<cmd>ObsidianSearch<CR>",
+			desc = "[S]earch [O]bsidian"
+		},
+		{
+			"<leader>on",
+			"<cmd>ObsidianNew<CR>",
+			desc = "[O]bsidian [N]ew"
+		},
+		{
+			"<leader>sb",
+			"<cmd>ObsidianBacklinks<CR>",
+			desc = "[S]earch [B]acklinks"
+		}
+	},
 	-- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
 	event = {
 		-- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.

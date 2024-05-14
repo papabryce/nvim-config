@@ -6,7 +6,7 @@ local keymaps = {
     -- Keymaps for better default experience
     -- See `:help vim.keymap.set()`
     vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-    vim.keymap.set('n', '<leader>sa', '<cmd>:wa<CR>', { desc = '[S]ave [A]ll buffers' })
+    -- vim.keymap.set('n', '<leader>sa', '<cmd>:wa<CR>', { desc = '[S]ave [A]ll buffers' })
     vim.keymap.set('n', '<Esc>', '<cmd> noh <CR>', { desc = 'Clear highlighting' })
 
     -- Remap for dealing with word wrap

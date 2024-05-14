@@ -18,7 +18,7 @@ return {
 	require('plugins/comment'),
 	-- Additional Plugins
 	require('plugins/obsidian'),
-	require('plugins/notify'),
+	-- require('plugins/notify'),
 	require('plugins/start-screen'),
 	require('plugins/noice'), -- causing fidget to still exist
 	require('plugins/file-tree'),
@@ -34,5 +34,8 @@ return {
 	require('plugins.nabla'),
 	require('plugins.errors'),
 	require('plugins.win-picker'),
-	require('plugins.terminal')
+	require('plugins.clangd-extensions'),
+	require('plugins.terminal'),
+	require('plugins.rocks'),
+	require('plugins.image')
 }
