@@ -24,7 +24,11 @@ return {
 		-- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
 		-- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
 		"BufReadPre " .. vim.fn.expand "~" .. "/Documents/Walker-Brain-Fork/**.md",
+		"BufReadPre " .. vim.fn.expand "~" .. "/Documents/Surgical-Coatings/**.md",
+		"BufReadPre " .. vim.fn.expand "~" .. "/Documents/SC-Shared/**.md",
 		"BufNewFile " .. vim.fn.expand "~" .. "/Documents/Walker-Brain-Fork/**.md",
+		"BufNewFile " .. vim.fn.expand "~" .. "/Documents/Surgical-Coatings/**.md",
+		"BufNewFile " .. vim.fn.expand "~" .. "/Documents/SC-Shared/**.md",
 	},
 	dependencies = {
 		-- Required.
@@ -37,6 +41,10 @@ return {
 			{
 				name = "personal",
 				path = "~/Documents/Walker-Brain-Fork/",
+			},
+			{
+				name = "work",
+				path = "~/Documents/Surgical-Coatings/",
 			},
 		},
 
