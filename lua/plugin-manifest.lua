@@ -32,7 +32,7 @@ return {
 	require('plugins/cmake-tools'),
 	require('plugins/suda'),
 	require('plugins.nabla'),
-	require('plugins.errors'),
+	-- require('plugins.errors'),
 	require('plugins.win-picker'),
 	require('plugins.clangd-extensions'),
 	require('plugins.terminal'),
