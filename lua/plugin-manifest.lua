@@ -5,6 +5,7 @@
 return {
 	-- Base Plugins
 	require('plugins/telescope'),
+	-- require('plugins/riscv'),
 	require('plugins/treesitter'),
 	require('plugins/lsp'),
 	require('plugins/debug'),

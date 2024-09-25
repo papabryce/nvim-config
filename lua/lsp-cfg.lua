@@ -115,6 +115,7 @@ local servers = {
     },
   },
   -- gopls = {},
+  asm_lsp = {},
   pyright = {},
   rust_analyzer = {
     ["rust-analyzer"] = {
