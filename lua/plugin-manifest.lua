@@ -38,5 +38,6 @@ return {
 	require('plugins.clangd-extensions'),
 	require('plugins.terminal'),
 	require('plugins.rocks'),
+	require('plugins.pio'),
 	require('plugins.image')
 }
