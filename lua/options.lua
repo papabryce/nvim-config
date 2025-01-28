@@ -2,7 +2,7 @@
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 --
-
+--
 vim.o.laststatus = 3 -- For horizontal split border
 
 vim.o.tabstop = 2
